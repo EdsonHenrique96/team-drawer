@@ -4,7 +4,7 @@ interface TeamBuilderContextProps {
   teams: Team[];
   setTotalTeams: (totalTeams: number) => void;
   addPlayers: (e: ChangeEvent<HTMLInputElement>) => void;
-  shuffleTeams: () => void;
+  buildTeams: () => void;
   setPlayersPerTeam: (playersPerTeam: number) => void;
   setTotalPlayers: (totalPlayers: number) => void;
   playersPerTeam: number;
@@ -48,21 +48,29 @@ export function TeamBuilderProvider({ children }: TeamBuilderProviderProps) {
     setPlayes(clonePlayers);
   }
 
-  function shuffleTeams() {
+  function shufflePlayers () {
     let length = players.length;
     let shuffledPlayers: Player[] = Array(length).fill({ name: "", value: "" });
 
     for (let index = 0, rand; index < length; index++) {
-      rand = Math.floor(Math.random() * (index));
+      rand = Math.floor(Math.random() * index);
       if (rand !== index) shuffledPlayers[index] = shuffledPlayers[rand];
       shuffledPlayers[rand] = players[index];
     }
 
+    return shuffledPlayers;
+  }
+
+  function buildTeams() {
+    const shuffledPlayers = shufflePlayers();
+
     const cloneTeam = [...teams];
+
     for (let i = 1; i <= Math.floor(totalTeams); i++) {
       let shuffledTeam: Player[] = shuffledPlayers.splice(0, playersPerTeam);
       cloneTeam.push(shuffledTeam);
     }
+
     if (shuffledPlayers.length > 0 ) {
       cloneTeam.push(shuffledPlayers);
     }
@@ -76,7 +84,7 @@ export function TeamBuilderProvider({ children }: TeamBuilderProviderProps) {
         teams,
         setTotalTeams,
         addPlayers,
-        shuffleTeams,
+        buildTeams,
         setPlayersPerTeam,
         setTotalPlayers,
         playersPerTeam,

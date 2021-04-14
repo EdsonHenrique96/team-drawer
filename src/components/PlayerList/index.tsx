@@ -7,13 +7,13 @@ interface PlayerListProps {
 }
 
 export function PlayerList(props: PlayerListProps) {
-  const { addPlayers, shuffleTeams } = useTeamBuilder();
+  const { addPlayers, buildTeams } = useTeamBuilder();
   const [ buttonDisable, setButtonDisable ] = useState(false);
 
   const auxArray = Array(props.numberOfPlayers).fill("");
 
   function handleClick() {
-    shuffleTeams();
+    buildTeams();
     setButtonDisable(true);
   }
 
