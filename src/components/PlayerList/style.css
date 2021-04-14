@@ -9,3 +9,8 @@
   width: 200px;
   margin-top: 1rem;
 }
+
+.player-list h3 {
+  color: var(--text);
+  font-weight: bold;
+}

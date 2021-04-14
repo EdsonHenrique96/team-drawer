@@ -1,6 +1,4 @@
 .team-builder-container {
-  border-bottom: 1px solid black;
-
   max-width: 1120px;
 
   display: flex;
@@ -29,6 +27,7 @@
   display: block;
   text-align: center;
 
+  border: 0;
   border-radius: 3px;
 }
 
@@ -36,7 +35,7 @@
   display: inline-block;
 
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: var(--text);
 
   font-size: 1.2rem;
 }
@@ -51,8 +50,8 @@
 
   margin-top: 2rem;
 
-  background-color: #27ae60;
-  border: none;
+  background-color: var(--action-button);
+  border: 0;
   border-radius: 3px;
 
   color: #ecf0f1;
