@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/team-drawer_app/static/css/main.212f9c2e.chunk.css",
+    "main.js": "/team-drawer_app/static/js/main.3240ca39.chunk.js",
+    "main.js.map": "/team-drawer_app/static/js/main.3240ca39.chunk.js.map",
+    "runtime-main.js": "/team-drawer_app/static/js/runtime-main.3219a08a.js",
+    "runtime-main.js.map": "/team-drawer_app/static/js/runtime-main.3219a08a.js.map",
+    "static/js/2.b5e1300d.chunk.js": "/team-drawer_app/static/js/2.b5e1300d.chunk.js",
+    "static/js/2.b5e1300d.chunk.js.map": "/team-drawer_app/static/js/2.b5e1300d.chunk.js.map",
+    "index.html": "/team-drawer_app/index.html",
+    "static/css/main.212f9c2e.chunk.css.map": "/team-drawer_app/static/css/main.212f9c2e.chunk.css.map",
+    "static/js/2.b5e1300d.chunk.js.LICENSE.txt": "/team-drawer_app/static/js/2.b5e1300d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3219a08a.js",
+    "static/js/2.b5e1300d.chunk.js",
+    "static/css/main.212f9c2e.chunk.css",
+    "static/js/main.3240ca39.chunk.js"
+  ]
+}
