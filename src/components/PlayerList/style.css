@@ -1,0 +1,11 @@
+.player-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-list input {
+  width: 200px;
+  margin-top: 1rem;
+}

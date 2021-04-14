@@ -1,0 +1,42 @@
+.team-list {
+  width: 100%;
+}
+
+.team-list ul {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  list-style: none;
+}
+
+.team-list li {
+  background-color: #95a5a6;
+
+  width: 90%;
+
+  border-radius: 4px;
+
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.team-list header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1rem;
+}
+
+.team-list li strong {
+  font-weight: 600;
+  font-size: 1.2rem;
+
+  display: inline-block;
+
+  margin-bottom: 1rem;
+}
