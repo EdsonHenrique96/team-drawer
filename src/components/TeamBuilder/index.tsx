@@ -4,12 +4,12 @@ import { PlayerList } from '../PlayerList';
 import './style.css';
 
 export function TeamBuilder() {
+  const  [ totalPlayers, setTotalPlayers ] = useState(0);
+
   const {
-    setTotalPlayers,
     setPlayersPerTeam,
-    totalPlayers,
     playersPerTeam,
-    setTotalTeams
+    handleTotalTeams,
   } = useTeamBuilder();
 
   const [ buttonDisable, setButtonDisable ] = useState(false);
@@ -18,7 +18,7 @@ export function TeamBuilder() {
   function handleTeams() {
     const numberOfTeams = totalPlayers / playersPerTeam;
 
-    setTotalTeams(numberOfTeams);
+    handleTotalTeams(numberOfTeams);
     setShowPlayersInput(true);
     setButtonDisable(true);
   }
@@ -52,7 +52,12 @@ export function TeamBuilder() {
           Inserir jogadores
         </button>
 
-        { showPlayersInput &&  <PlayerList numberOfPlayers={totalPlayers} /> }
+        { 
+          showPlayersInput
+          && (
+            <PlayerList numberOfPlayers={totalPlayers} />
+          )
+        }
       </form>
     </div>
   )

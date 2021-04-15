@@ -2,13 +2,11 @@ import { ChangeEvent, createContext, useContext, useState } from 'react';
 
 interface TeamBuilderContextProps {
   teams: Team[];
-  setTotalTeams: (totalTeams: number) => void;
+  handleTotalTeams: (numberOfTeams: number) => void;
   addPlayers: (e: ChangeEvent<HTMLInputElement>) => void;
   buildTeams: () => void;
   setPlayersPerTeam: (playersPerTeam: number) => void;
-  setTotalPlayers: (totalPlayers: number) => void;
   playersPerTeam: number;
-  totalPlayers: number;
 }
 
 const TeamBuilderContext = createContext({} as TeamBuilderContextProps);
@@ -25,12 +23,15 @@ interface Player {
 export type Team = Player[]
 
 export function TeamBuilderProvider({ children }: TeamBuilderProviderProps) {
-  const [ players, setPlayes ] = useState<Player[]>([]); 
+  const [ players, setPlayes ] = useState<Player[]>([]);
   const [ totalTeams, setTotalTeams ] = useState(0);
   const [ teams, setTeams ] = useState<Team[]>([]);
 
   const [ playersPerTeam, setPlayersPerTeam ] = useState(6);
-  const [ totalPlayers, setTotalPlayers ] = useState(0);
+
+  function handleTotalTeams(numberOfTeams: number) {
+    setTotalTeams(Math.floor(numberOfTeams));
+  }
 
   function addPlayers(e: ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
@@ -82,13 +83,11 @@ export function TeamBuilderProvider({ children }: TeamBuilderProviderProps) {
     <TeamBuilderContext.Provider
       value={{
         teams,
-        setTotalTeams,
+        handleTotalTeams,
         addPlayers,
         buildTeams,
         setPlayersPerTeam,
-        setTotalPlayers,
         playersPerTeam,
-        totalPlayers
       }}
     >
       { children }
